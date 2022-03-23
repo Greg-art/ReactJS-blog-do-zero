@@ -1,0 +1,71 @@
+{
+  "id": "3b636cc2-05c8-4eb8-afe7-dde3f32199a2",
+  "uid": "sed-quam-ea",
+  "type": "posts",
+  "data": {
+    "title": [
+      {
+        "type": "heading1",
+        "text": "Utilize interactive functionalities",
+        "spans": []
+      }
+    ],
+    "subtitle": [
+      {
+        "type": "paragraph",
+        "text": "Labore amet in quis ullamco et laborum.",
+        "spans": []
+      }
+    ],
+    "author": [
+      {
+        "type": "paragraph",
+        "text": "Cillum exercitation laborum minim duis incididunt tempor culpa ad duis. Cillum ipsum ex qui elit irure deserunt commodo aute.",
+        "spans": []
+      }
+    ],
+    "banner": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482?w=900&h=500&fit=crop"
+    },
+    "content": [
+      {
+        "heading": [
+          {
+            "type": "heading3",
+            "text": "Extend customized portals",
+            "spans": []
+          }
+        ],
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Est minim aliquip fugiat tempor. Consectetur pariatur cillum labore dolor. Minim esse mollit officia aliquip culpa est.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": [
+          {
+            "type": "heading3",
+            "text": "Exploit back-end technologies",
+            "spans": []
+          }
+        ],
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Dolor deserunt est id aliqua veniam eu consectetur quis incididunt amet velit irure est veniam dolor. Eiusmod deserunt ullamco in quis pariatur culpa sint incididunt.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}

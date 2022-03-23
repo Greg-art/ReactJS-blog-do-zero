@@ -1,1 +1,45 @@
 // TODO
+
+.container{
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+}
+
+.posts{
+  width: 790px;
+}
+
+.post{
+  
+  margin-bottom: 3rem;
+
+  a{
+    text-decoration: none;
+    color: var(--white);
+
+    transition: color 0.1s;
+    
+    &:hover{
+      color: var(--pink);
+    }
+  }
+
+  p{
+    margin-top: 1rem;
+    color: var(--gray-500);
+  }
+
+  .extra{
+    color: var(--gray-800);
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 10px;
+    
+    time{
+      margin-right: 1rem;
+    }
+  }
+}

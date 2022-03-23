@@ -4,4 +4,27 @@
   padding: 0;
 }
 
-// TODO
+:root{
+  --pink: #FF57B2;
+  --dark: #1A1D23;
+  --white: #F8F8F8;
+  --gray-500: #D7D7D7;
+  --gray-800: #BBBBBB
+}
+
+body {
+  background: var(--dark);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+}
+
+@media(max-width: 1000px){
+  html{
+    font-size: 93.75%; // 16 - 15
+  }
+}
+@media(max-width: 720px){
+  html{
+    font-size: 87.5%; // 16 - 15
+  }
+}
