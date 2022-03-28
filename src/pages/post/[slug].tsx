@@ -13,20 +13,6 @@ import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import Head from 'next/head';
 
-// interface Post {
-//   first_publication_date: string | null;
-//   data: {
-//     title: string;
-//     banner: {
-//       url: string;
-//     };
-//     author: string;
-//     content: {
-//       heading: string;
-//       body: RichTextField;
-//     }[];
-//   };
-// }
 
 interface Post {
   first_publication_date: string | null;
@@ -52,32 +38,39 @@ export default function Post({ post }: PostProps) {
     <>
     <Head> <title>Home | BlogBleg</title> </Head>
     <body>
-      <div className={styles.head}>
-      {/* <img src={post.data.banner.url} alt="" /> */}
-        <h1>{post.data.title}</h1>
-        <div className={styles.extra}>
-          <FiCalendar />
-          <time>{post?.first_publication_date}</time>
-          <FiUser />
-          <span>{post.data.author}</span>
-          <FiClock />
-          <span>tempo estimado</span>
-        </div>  
+
+
+      {post.data.banner.url && (
+        <img className={styles.banner} src={post.data.banner.url} alt="" />
+      )}
+
+      <div className={styles.post}>
+        <div className={styles.head}>          
+          
+          <h1>{post.data.title}</h1>
+
+          <div className={styles.info}>
+            <FiCalendar />
+            <span><time>{post?.first_publication_date}</time></span>
+            <FiUser />
+            <span>{post.data.author}</span>
+            <FiClock />
+            <span>tempo estimado</span>
+          </div>  
+          
+        </div>
 
         <div className={styles.content}>
           {post.data.content.map(content => {
-            // console.log(content.body)
             return(
-              <div className={styles.content2} key={RichText.asText(content.heading)}>
+              <div key={RichText.asText(content.heading)}>
                 <PrismicRichText field={content.heading} />
                 <PrismicRichText field={content.body} />
               </div>
             )
           })}
         </div>
-        
       </div>
-      
     </body>
     </>
   )
@@ -105,9 +98,6 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
   const prismic = getPrismicClient();
   const { slug } = params;
   const response = await prismic.getByUID<any>('posts',String(slug), {})
-
-
-  console.log(JSON.stringify(response.data,null,2))
 
   const post: Post = {
     first_publication_date: format(

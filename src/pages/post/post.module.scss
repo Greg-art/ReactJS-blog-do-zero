@@ -1,1 +1,53 @@
 // TODO
+
+.body{
+  width: 100vw;
+}
+
+.banner{
+  width: 100vw;
+  height: 400px;
+  object-fit: cover;
+}
+
+.post{
+  margin: 0 auto;
+  width: 790px;
+}
+
+.head{
+  margin-bottom: 4rem;
+  h1{
+    
+  }
+
+  .info{
+    color: var(--gray-800);
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    span{
+      margin-right: 1rem;
+    }
+  }
+}
+
+.content{
+  margin-top: 1rem;
+  line-height: 25.2px;
+
+  h3{
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+  }
+  p{
+    color: var(--gray-500);
+    
+  }
+  strong{
+    
+  }
+}
