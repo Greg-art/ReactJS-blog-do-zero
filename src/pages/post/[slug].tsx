@@ -26,6 +26,7 @@ interface Post {
       heading: RichTextField;
       body: RichTextField;
     }[];
+    estimated_time: number;
   };
 }
 
@@ -55,7 +56,7 @@ export default function Post({ post }: PostProps) {
             <FiUser />
             <span>{post.data.author}</span>
             <FiClock />
-            <span>tempo estimado</span>
+            <span>{post.data.estimated_time}m</span>
           </div>  
           
         </div>
@@ -99,21 +100,31 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
   const { slug } = params;
   const response = await prismic.getByUID<any>('posts',String(slug), {})
 
+  // RichText.asText(response.data.content).split(' ').length()
+
+
+  
   const post: Post = {
     first_publication_date: format(
       new Date(response.first_publication_date),
       'dd MMM yyyy',
       { locale: ptBR }
-    ),
+      ),
     // data: response.data,
     data: {
       title: RichText.asText(response.data.title),
       banner: response.data.banner,
       author: RichText.asText(response.data.author),
       content: response.data.content,
+      estimated_time: response.data.content.reduce((minLecture, content) => {
+        const size = RichText.asText(content.body).split(/[,.\s]/).length;
+  
+        /* eslint no-param-reassign: ["off"] */
+        minLecture = Math.ceil(size / 200);
+        return minLecture;
+      }, 0),
     },
   };
-  
 
   return{
     props: {
