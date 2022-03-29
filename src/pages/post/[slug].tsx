@@ -86,13 +86,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
     pageSize: 10
   });
 
+  const paths = posts.results.map( result => {
+    return{  
+      params: { slug: result.uid } }   
+    }
+  ) 
+
   return {
-    paths: [
-      { params: { slug: posts.results[0].uid}}           
-    ],
-    fallback: 'blocking'
+    paths,
+    fallback: true
   }
-  // TODO
 };
 
 export const getStaticProps: GetStaticProps = async ({params}) => {
