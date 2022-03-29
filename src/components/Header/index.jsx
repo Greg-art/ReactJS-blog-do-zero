@@ -5,7 +5,9 @@ export function Header() {
     <>
       <header className={styles.headerContainer}>
         <div className={styles.headerContent}>
-          <img src="/images/logo.svg" alt="logo" />
+          <a href="http://localhost:3000/">
+            <img src="/images/logo.svg" alt="logo" />
+          </a>
         </div>
       </header>
     </>
